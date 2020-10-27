@@ -1,0 +1,15 @@
+kind: IngressRoute
+apiVersion: traefik.containo.us/v1alpha1
+metadata:
+  name: simpleingressroute
+  namespace: default
+spec:
+  entryPoints:
+    - web
+  routes:
+  # - match: Host(`your.example.com`)
+  - match: PathPrefix(`/who`)
+    kind: Rule
+    services:
+    - name: whoami
+      port: 80
