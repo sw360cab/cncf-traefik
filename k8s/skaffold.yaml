@@ -1,0 +1,12 @@
+kind: Config
+apiVersion: skaffold/v2beta2 
+metadata:
+  name: traefik-demo-tae
+deploy:
+  kubectl:
+    manifests:
+    #### Ingress ####
+    ## Traefik - May not work out of the box (CRDs dependency)
+      - ./traefik/crd.yaml
+      - ./traefik/rbac.yaml
+      - ./traefik/*.yaml
