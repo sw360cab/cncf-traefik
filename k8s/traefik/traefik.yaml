@@ -28,6 +28,7 @@ spec:
             - --certificatesresolvers.myresolver.acme.tlschallenge
             - --certificatesresolvers.myresolver.acme.email=foo@you.com
             - --certificatesresolvers.myresolver.acme.storage=acme.json
+            # - --certificatesresolvers.myresolver.acme.httpchallenge.entrypoint=web
             # Please note that this is the staging Let's Encrypt server.
             # Once you get things working, you should remove that whole line altogether.
             - --certificatesresolvers.myresolver.acme.caserver=https://acme-staging-v02.api.letsencrypt.org/directory
@@ -35,7 +36,7 @@ spec:
             - name: web
               containerPort: 80
             - name: websecure
-              containerPort: 4443
+              containerPort: 443
             - name: admin
               containerPort: 8080
           resources:
@@ -55,15 +56,14 @@ spec:
     protocol: TCP
     port: 80
     targetPort: 80
-    nodePort: 30080
   - name: admin
     protocol: TCP
     port: 8080
     targetPort: 8080
-    nodePort: 30808
   - name: webtls
     protocol: TCP
     port: 443
     targetPort: 443
-    nodePort: 30443
-  type: NodePort
+  type: ClusterIP
+  externalIPs:
+    - 18.193.167.122 # Node1-IP
