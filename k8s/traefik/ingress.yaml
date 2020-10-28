@@ -1,3 +1,12 @@
+kind: Middleware
+apiVersion: traefik.containo.us/v1alpha1
+metadata:
+  name: demo-plugin
+spec:
+  plugin:
+    dev:
+      HeaderName: "X-Traefik-Test"
+---
 kind: IngressRoute
 apiVersion: traefik.containo.us/v1alpha1
 metadata:
