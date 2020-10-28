@@ -1,0 +1,9 @@
+displayName: CNCF Tae Demo
+type: middleware
+
+import: cncftaeplugin
+
+summary: '[Demo] Inject Header for CNCF'
+
+testData:
+  HeaderName: "X-Traefik-Test"
