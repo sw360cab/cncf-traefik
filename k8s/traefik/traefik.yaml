@@ -66,4 +66,4 @@ spec:
     targetPort: 443
   type: ClusterIP
   externalIPs:
-    - 18.193.167.122 # Node1-IP
+    - 147.75.87.125 # Node1-IP
