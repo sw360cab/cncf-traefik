@@ -25,6 +25,9 @@ spec:
             - --entrypoints.web.address=:80
             - --entrypoints.websecure.address=:443
             - --providers.kubernetescrd
+            - --pilot.token=48c3a161-489d-496a-8f92-33d514664e7d
+            - --experimental.devPlugin.gopath=/data
+            - --experimental.devPlugin.modulename=uiddemo
             - --certificatesresolvers.myresolver.acme.tlschallenge
             - --certificatesresolvers.myresolver.acme.email=foo@you.com
             - --certificatesresolvers.myresolver.acme.storage=acme.json
@@ -43,6 +46,13 @@ spec:
             limits:
               cpu: "1"
               memory: "500Mi"
+          volumeMounts:
+          - name: plugin-traefik
+            mountPath: /data/src
+      volumes:
+      - name: plugin-traefik
+        hostPath:
+          path: /files
 ---
 apiVersion: v1
 kind: Service
