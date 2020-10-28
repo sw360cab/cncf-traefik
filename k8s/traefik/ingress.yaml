@@ -12,24 +12,3 @@ spec:
     services:
     - name: whoami
       port: 80
-# ---
-# kind: IngressRoute
-# apiVersion: traefik.containo.us/v1alpha1
-# metadata:
-#   name: simpleingressroute-tls
-#   namespace: default
-# spec:
-#   entryPoints:
-#     - websecure
-#   routes:
-#   - match: Host(`k8s.minimalgap.com`)
-#     kind: Rule
-#     services:
-#     - name: whoami
-#       port: 80
-#   tls:
-#     certResolver: myresolver
-#     # domains:
-#     #   - main: k8s.minimalgap.com
-#     #     sans:
-#     #     - '*.k8s.minimalgap.com'
