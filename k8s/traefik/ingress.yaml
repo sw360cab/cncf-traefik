@@ -1,3 +1,12 @@
+kind: Middleware
+apiVersion: traefik.containo.us/v1alpha1
+metadata:
+  name: demo-plugin
+spec:
+ plugin:
+    cncftaeplugin:
+      HeaderName: "X-Traefik-Test"
+---
 kind: IngressRoute
 apiVersion: traefik.containo.us/v1alpha1
 metadata:
@@ -12,3 +21,5 @@ spec:
     services:
     - name: whoami
       port: 80
+    middlewares:
+    - name: demo-plugin

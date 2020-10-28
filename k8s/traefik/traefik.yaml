@@ -25,6 +25,9 @@ spec:
             - --entrypoints.web.address=:80
             - --entrypoints.websecure.address=:443
             - --providers.kubernetescrd
+            - --pilot.token=48c3a161-489d-496a-8f92-33d514664e7d
+            - --experimental.plugins.cncftaeplugin.modulename=github.com/sw360cab/cncftaeplugin
+            - --experimental.plugins.cncftaeplugin.version=0.0.1
             - --certificatesresolvers.myresolver.acme.tlschallenge
             - --certificatesresolvers.myresolver.acme.email=foo@you.com
             - --certificatesresolvers.myresolver.acme.storage=acme.json
@@ -58,7 +61,7 @@ spec:
     targetPort: 80
   - name: admin
     protocol: TCP
-    port: 8080
+    port: 8081
     targetPort: 8080
   - name: webtls
     protocol: TCP
