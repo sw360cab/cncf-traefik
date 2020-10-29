@@ -61,7 +61,7 @@ spec:
     targetPort: 80
   - name: admin
     protocol: TCP
-    port: 8081
+    port: 8080
     targetPort: 8080
   - name: webtls
     protocol: TCP

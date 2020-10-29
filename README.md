@@ -17,7 +17,7 @@
 
 ### Port Forward
 
-    kubectl port-forward svc/argocd-server -n argocd 8081:443
+    kubectl port-forward svc/argocd-server --address 0.0.0.0 -n argocd 8081:443
 
 ### Get Password
 
