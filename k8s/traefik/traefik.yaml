@@ -27,7 +27,7 @@ spec:
             - --providers.kubernetescrd
             - --pilot.token=48c3a161-489d-496a-8f92-33d514664e7d
             - --experimental.plugins.cncftaeplugin.modulename=github.com/sw360cab/cncftaeplugin
-            - --experimental.plugins.cncftaeplugin.version=0.0.1
+            - --experimental.plugins.cncftaeplugin.version=0.0.3
             - --certificatesresolvers.myresolver.acme.tlschallenge
             - --certificatesresolvers.myresolver.acme.email=foo@you.com
             - --certificatesresolvers.myresolver.acme.storage=acme.json
